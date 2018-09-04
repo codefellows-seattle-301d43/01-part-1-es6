@@ -14,7 +14,7 @@ There are three components to this lab exercise:
 - Working through the exercises in the `let-const` directory
 - Working through the exercises in the `arrow-functions` directory
 
-Fork and then clone the class repository from the link provided by the instructor in Slack into your `~/codefellows/301` directory, and navigate into that repo. Work on your fork on non-master branches. As you work, remember to add, commit, and push regularly.
+Fork and then clone this repository into your `~/codefellows/301` directory, and navigate into that repo. Work on your fork on non-master branches. As you work, remember to add, commit, and push regularly.
 
 ### Examples of let and const
 
