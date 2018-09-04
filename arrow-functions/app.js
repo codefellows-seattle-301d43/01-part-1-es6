@@ -2,7 +2,7 @@
 
 // STEP 1
 // This is a standard function expression. You may also be familiar with function declarations, which begin with the "function" keyword.
-const theOldWay = function(course) {
+const theOldWay = function (course) {
   return `I am currently enrolled in ${course}`;
 };
 
@@ -35,7 +35,7 @@ const withoutParens = course => {
 // If the code block contains a single line of code, we can write everything on one line
 // We no longer need the curly braces and the return is implicit
 // Without an arrow function, we need to explicitly type "return"
-const oneLiner = course => `I cam currently enrolled in ${course}`;
+const oneLiner = course => `I am currently enrolled in ${course}`;
 
 // TODO: Uncomment the following line of code to see the output in the browser console
 // console.log('As a one-liner:', oneLiner('Code 301'));
@@ -44,7 +44,7 @@ const oneLiner = course => `I cam currently enrolled in ${course}`;
 // STEP 5
 // What if we have multiple parameters?
 // In a function expression, they all go in the parentheses
-const add = function(num1, num2) {
+const add = function (num1, num2) {
   return `${num1} + ${num2} = ${num1 + num2}`;
 };
 
@@ -76,7 +76,7 @@ const multiLiner = word => {
 // STEP 8
 // The way an object is returned is different with an arrow function, too.
 // Here is how we return an object without arrow functions
-const oldObject = function(array) {
+const oldObject = function (array) {
   return {
     firstValue: array[0],
     secondValue: array[1],
@@ -104,71 +104,62 @@ const newObject = array => ({
 // STEP 10
 // Uncomment the console.log lines to view the output of each function in the browser console.
 // Refactor each function into an arrow function.
-// Write your solutions on a single line wherever possible. 
+// Write your solutions on a single line wherever possible.
 
 
 
-let sum = function(a, b, c, d) {
-  return a + b + c + d;
-};
+let sum = (a, b, c, d) => a + b + c + d;
 
 // TODO: Uncomment the following line of code to see the output in the browser console
-// console.log(sum(1, 2, 3, 4));
+console.log(sum(1, 2, 3, 4));
 
 
-let objectLit = function() {
-  return {
-    key1: 'value1',
-    key2: 'value2',
-    key3: 'value3',
-  };
-};
+let objectLit = () => ({
+  key1: 'value1',
+  key2: 'value2',
+  key3: 'value3',
+});
 
 // TODO: Uncomment the following line of code to see the output in the browser console
-// console.log(objectLit());
+console.log(objectLit());
 
 
-let sumAndProduct = function(a, b) {
+let sumAndProduct = (a, b) => {
   let sum = a + b;
   let product = a * b;
   return [sum, product];
 };
 
 // TODO: Uncomment the following line of code to see the output in the browser console
-// console.log(sumAndProduct(3, 9));
+console.log(sumAndProduct(3, 9));
 
 
-let message = function(name) {
-  return `Hello, ${name}!`;
-};
+let message = name => `Hello, ${name}!`;
 
 // TODO: Uncomment the following line of code to see the output in the browser console
-// console.log(message('Allie'));
+console.log(message('Allie'));
 
 
-let Student = function(name, age, hometown) {
+let Student = function (name, age, hometown) {
   this.name = name;
   this.age = age;
   this.hometown = hometown;
 };
 
 let joe = new Student('Joe', 'Schmoe', 100);
+//avoid using arrow functions in constructors.
 
 // TODO: Uncomment the following line of code to see the output in the browser console
-// console.log(joe);
+console.log(joe);
 
 
-Student.prototype.greeting = function() {
-  return `Hi, my name is ${this.name}`;
-};
+Student.prototype.greeting = () => `Hi, my name is ${this.name}`;
 
 // TODO: Uncomment the following line of code to see the output in the browser console
-// console.log(joe.greeting());
+console.log(joe.greeting());
 
 
-Student.courseName = function() {
-  return 'This student is enrolled in Code 301.';
-};
+Student.courseName = () => 'This student is enrolled in Code 301.';
 
 // TODO: Uncomment the following line of code to see the output in the browser console
 // console.log(Student.courseName());
@@ -177,22 +168,22 @@ Student.courseName = function() {
 
 // STEP 11
 // How do arrow functions affect constructor functions?
-Student.prototype.scope = function() {
+Student.prototype.scope = function () {
   console.log(this);
 };
 
 // TODO: Uncomment the following line of code to see the output in the browser console
-// console.log(joe.scope());
+console.log(joe.scope());
 
 Student.prototype.scopeArrow = () => console.log(this);
 
 // TODO: Uncomment the following line of code to see the output in the browser console
-// console.log(joe.scopeArrow());
+console.log(joe.scopeArrow());
 
 // TODO: Write a COMMENT below to answer the following questions.
 // 1. What is "this" when joe.scope() is invoked?
-// 
+// "this" refers to the local Student object for which the method is being called.
 // 2. What is "this" when joe.scopeArrow() is invoked?
-//
+// "this" refers to the window object.
 // 3. Explain why "this" is different when an arrow function is used.
-// 
+// The arrow function does not bind 'this' but bubbles up to the level above it causing issues for constructor functions.
