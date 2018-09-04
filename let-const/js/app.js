@@ -35,9 +35,8 @@ function displayPics(){
       viewed.push(rando);
     }
   }
-  console.log(rando);
   // TODO: In a sentence or two, explain why the previous line of code threw an error when we changed the letiable declaration from `let to `let`.
-  // PUT YOUR RESPONSE IN THIS COMMENT
+  // Let is scoped locally so event thought the variable has been assigned it has only been assigned locally the console.log was trying to pull from a variable that didnt exist on a global scale. 
   console.log(viewed);
 
   for (let i = 0; i < 3; i++){
