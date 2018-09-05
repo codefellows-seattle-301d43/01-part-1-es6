@@ -170,10 +170,10 @@ console.log(joe.scopeArrow());
 
 // TODO: Write a COMMENT below to answer the following questions.
 // 1. What is "this" when joe.scope() is invoked?
-// 'This' is 'Window' in case we use function declaration.
+// Instance of Student object, 'joe'.
 //
 // 2. What is "this" when joe.scopeArrow() is invoked?
-// It's undefined.
+// 'This' is 'Window' in case we use function declaration.
 //
 // 3. Explain why "this" is different when an arrow function is used.
 // As MDN says: An arrow function does not have its own 'this'; the 'this' value of the enclosing lexical context is used.
