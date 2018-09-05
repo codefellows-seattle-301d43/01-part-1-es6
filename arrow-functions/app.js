@@ -139,13 +139,6 @@ let Student = function(name, age, hometown) {
   this.hometown = hometown;
 };
 
-// Does not work
-// const Student = (name, age, hometown) => {
-//   this.name = name;
-//   this.age = age;
-//   this.hometown = homewtown;
-// }
-
 let joe = new Student('Joe', 'Schmoe', 100);
 
 // TODO: Uncomment the following line of code to see the output in the browser console
@@ -156,16 +149,8 @@ Student.prototype.greeting = function() {
   return `Hi, my name is ${this.name}`;
 };
 
-// Does not work
-// Student.prototype.greeting = () => `Hi, my name is ${this.name}`;
-
 // TODO: Uncomment the following line of code to see the output in the browser console
 console.log(joe.greeting());
-
-
-// Student.courseName = function() {
-//   return 'This student is enrolled in Code 301.';
-// };
 
 Student.courseName = () => 'This student is enrolled in Code 301.';
 // TODO: Uncomment the following line of code to see the output in the browser console
@@ -180,7 +165,7 @@ Student.prototype.scope = function() {
 };
 
 // TODO: Uncomment the following line of code to see the output in the browser console
-// console.log(joe.scope());
+console.log(joe.scope());
 
 Student.prototype.scopeArrow = () => console.log(this);
 
