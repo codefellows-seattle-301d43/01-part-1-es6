@@ -206,8 +206,8 @@ console.log(joe.scopeArrow());
 
 // TODO: Write a COMMENT below to answer the following questions.
 // 1. What is "this" when joe.scope() is invoked?
-// 
+// It's a keyword that is bineded to the Student object's key-value pairs.
 // 2. What is "this" when joe.scopeArrow() is invoked?
-//
+// It's undefined.
 // 3. Explain why "this" is different when an arrow function is used.
-// 
+//Arrow funtions do not provide their own binding!
